@@ -1,5 +1,5 @@
 # InstagramFollowerApp
-This is a Windows Forms App that will take in user input for an Instagram Log In and tell the user who does not follow them back on Instagram. See more information about this app on my website.
+This is a Windows Forms App that will take in user input for an Instagram Log In and tell the user who does not follow them back on Instagram. See more information about this app on my [website](people.cs.ksu.edu/~jbui).
 
 # How to use
 1. Run the program
