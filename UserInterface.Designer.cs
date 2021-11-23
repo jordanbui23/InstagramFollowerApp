@@ -29,16 +29,14 @@ namespace InstagramFollowerApp {
             this.uxFollowers = new System.Windows.Forms.TextBox();
             this.uxUsername = new System.Windows.Forms.TextBox();
             this.uxPassword = new System.Windows.Forms.TextBox();
-            this.uxCheckFollower = new System.Windows.Forms.Button();
             this.uxUsernameInfo = new System.Windows.Forms.Label();
             this.uxPasswordInfo = new System.Windows.Forms.Label();
-            this.uxFollowerButtonInfo = new System.Windows.Forms.Label();
-            this.uxAddFollower = new System.Windows.Forms.Button();
+            this.uxClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxLogIn
             // 
-            this.uxLogIn.Location = new System.Drawing.Point(53, 178);
+            this.uxLogIn.Location = new System.Drawing.Point(53, 209);
             this.uxLogIn.Name = "uxLogIn";
             this.uxLogIn.Size = new System.Drawing.Size(198, 44);
             this.uxLogIn.TabIndex = 0;
@@ -70,16 +68,6 @@ namespace InstagramFollowerApp {
             this.uxPassword.Size = new System.Drawing.Size(297, 31);
             this.uxPassword.TabIndex = 3;
             // 
-            // uxCheckFollower
-            // 
-            this.uxCheckFollower.Location = new System.Drawing.Point(73, 258);
-            this.uxCheckFollower.Name = "uxCheckFollower";
-            this.uxCheckFollower.Size = new System.Drawing.Size(160, 43);
-            this.uxCheckFollower.TabIndex = 6;
-            this.uxCheckFollower.Text = "Check Followers";
-            this.uxCheckFollower.UseVisualStyleBackColor = true;
-            this.uxCheckFollower.Click += new System.EventHandler(this.uxCheckFollower_Click);
-            // 
             // uxUsernameInfo
             // 
             this.uxUsernameInfo.AutoSize = true;
@@ -98,35 +86,24 @@ namespace InstagramFollowerApp {
             this.uxPasswordInfo.TabIndex = 8;
             this.uxPasswordInfo.Text = "Password";
             // 
-            // uxFollowerButtonInfo
+            // uxClear
             // 
-            this.uxFollowerButtonInfo.AutoSize = true;
-            this.uxFollowerButtonInfo.Location = new System.Drawing.Point(24, 230);
-            this.uxFollowerButtonInfo.Name = "uxFollowerButtonInfo";
-            this.uxFollowerButtonInfo.Size = new System.Drawing.Size(260, 25);
-            this.uxFollowerButtonInfo.TabIndex = 9;
-            this.uxFollowerButtonInfo.Text = "Click Button Below If Logged In";
-            // 
-            // uxAddFollower
-            // 
-            this.uxAddFollower.Location = new System.Drawing.Point(12, 326);
-            this.uxAddFollower.Name = "uxAddFollower";
-            this.uxAddFollower.Size = new System.Drawing.Size(142, 34);
-            this.uxAddFollower.TabIndex = 10;
-            this.uxAddFollower.Text = "Add Follower";
-            this.uxAddFollower.UseVisualStyleBackColor = true;
-            this.uxAddFollower.Click += new System.EventHandler(this.uxAddFollower_Click);
+            this.uxClear.Location = new System.Drawing.Point(127, 299);
+            this.uxClear.Name = "uxClear";
+            this.uxClear.Size = new System.Drawing.Size(112, 34);
+            this.uxClear.TabIndex = 9;
+            this.uxClear.Text = "clear";
+            this.uxClear.UseVisualStyleBackColor = true;
+            this.uxClear.Click += new System.EventHandler(this.uxClear_Click);
             // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 372);
-            this.Controls.Add(this.uxAddFollower);
-            this.Controls.Add(this.uxFollowerButtonInfo);
+            this.Controls.Add(this.uxClear);
             this.Controls.Add(this.uxPasswordInfo);
             this.Controls.Add(this.uxUsernameInfo);
-            this.Controls.Add(this.uxCheckFollower);
             this.Controls.Add(this.uxPassword);
             this.Controls.Add(this.uxUsername);
             this.Controls.Add(this.uxFollowers);
@@ -146,11 +123,9 @@ namespace InstagramFollowerApp {
         private System.Windows.Forms.TextBox uxFollowers;
         private System.Windows.Forms.TextBox uxUsername;
         private System.Windows.Forms.TextBox uxPassword;
-        private System.Windows.Forms.Button uxCheckFollower;
         private System.Windows.Forms.Label uxUsernameInfo;
         private System.Windows.Forms.Label uxPasswordInfo;
-        private System.Windows.Forms.Label uxFollowerButtonInfo;
-        private System.Windows.Forms.Button uxAddFollower;
+        private System.Windows.Forms.Button uxClear;
     }
 }
 
