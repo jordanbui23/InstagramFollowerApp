@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using System.IO;
 
 namespace InstagramFollowerApp {
     public partial class UserInterface : Form {
@@ -54,7 +54,7 @@ namespace InstagramFollowerApp {
         /// <param name="e"></param>
         private void UserInterface_Load(object sender, EventArgs e) {
             // I had to install the chrome driver for my version of chrome. This might make it harder for others to use
-            drv = new ChromeDriver("C:/Users/jorda/OneDrive/Desktop/Instagram App/InstagramFollowerApp/chromedriver_win32");
+            drv = new ChromeDriver(Path.Combine(Directory.GetCurrentDirectory(), "chromedriver_win32")); // Loads the chromedriver folder in the current directory
             drv.Navigate().GoToUrl(url);
         }
 
@@ -80,6 +80,7 @@ namespace InstagramFollowerApp {
         /// </summary>
         private void CheckFollower() {
             try {
+
                 drv.FindElement(By.XPath("//span[@class='_2dbep qNELH']")).Click(); // Clicks the profile picture
                 drv.FindElement(By.XPath("//div[@class='_7UhW9   xLCgt      MMzan  KV-D4              fDxYl     ']")).Click(); // Clicks the profile button
                 Thread.Sleep(2000);
