@@ -64,14 +64,14 @@ namespace InstagramFollowerApp {
         private void LogIn() {
             try {
                 drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(uxUsername.Text); Thread.Sleep(200);
-                drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(uxPassword.Text);
+                drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(uxPassword.Text); Thread.Sleep(200);
                 drv.FindElement(By.XPath("//button[@class='sqdOP  L3NKy   y3zKF     ']")).Click();    
-                Thread.Sleep(3500);
+                Thread.Sleep(4500);
                 CheckFollower();
             } catch (Exception e) {
                 drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace); Thread.Sleep(200);
                 drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace);
-                MessageBox.Show("Username or password is invalid");
+                MessageBox.Show("Username or password is invalid 1");
             }
         }
 
@@ -80,31 +80,30 @@ namespace InstagramFollowerApp {
         /// </summary>
         private void CheckFollower() {
             try {
-
-                drv.FindElement(By.XPath("//span[@class='_2dbep qNELH']")).Click(); // Clicks the profile picture
-                drv.FindElement(By.XPath("//div[@class='_7UhW9   xLCgt      MMzan  KV-D4              fDxYl     ']")).Click(); // Clicks the profile button
-                Thread.Sleep(2000);
+                drv.FindElement(By.XPath("//span[@class='_2dbep qNELH']")).Click(); Thread.Sleep(200);// Clicks the profile picture
+                drv.FindElement(By.XPath("//div[@class='             qF0y9          Igw0E   rBNOH        eGOV_     ybXk5     _4EzTm                                                                                   XfCBB          HVWg4                  -Rt5j ZUqME']")).Click(); Thread.Sleep(200);// Clicks the profile button
+                Thread.Sleep(2500);
                 // By this point the program should be on the users home page
-                int numFollowers = Convert.ToInt32(drv.FindElements(By.XPath("//span[@class='g47SY ']"))[1].Text);
-                int numFollowing = Convert.ToInt32(drv.FindElements(By.XPath("//span[@class='g47SY ']"))[2].Text);
-                drv.FindElements(By.XPath("//a[@class='-nal3 ']"))[0].Click(); // Clicks the followers page
-                Thread.Sleep(2000);                                            // Needs time for the followers page to load
+                int numFollowers = Convert.ToInt32(drv.FindElements(By.XPath("//span[@class='_ac2a _ac2b']"))[1].Text);
+                int numFollowing = Convert.ToInt32(drv.FindElements(By.XPath("//span[@class='_ac2a _ac2b']"))[2].Text);
+                drv.FindElements(By.XPath("//a[@class='oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl _a6hd']"))[0].Click(); // Clicks the followers page
+                Thread.Sleep(2500);                                            // Needs time for the followers page to load
                 ScrollDown(numFollowers);                                      // Scrolls down the followers
                 LoadPeople(followers, numFollowers);
-                drv.FindElements(By.XPath("//div[@class='WaOAr']"))[1].Click();// Clicks the X
-                drv.FindElements(By.XPath("//a[@class='-nal3 ']"))[1].Click(); // Clicks the following page
-                Thread.Sleep(2000);                                            // Needs time for the followers page to load
+                drv.FindElements(By.XPath("//button[@class='_abl-']"))[1].Click();// Clicks the X
+                drv.FindElements(By.XPath("//a[@class='oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl _a6hd']"))[1].Click(); // Clicks the following page
+                Thread.Sleep(2500);                                            // Needs time for the followers page to load
                 ScrollDown(numFollowing);                                      // Scrolls down the followers
                 LoadPeople(following, numFollowing);
-                drv.FindElements(By.XPath("//div[@class='WaOAr']"))[1].Click();// Clicks the X
+                drv.FindElements(By.XPath("//button[@class='_abl-']"))[1].Click();// Clicks the X
                 ArrayList notFollowing = CheckLists(followers, following);     // Fills an ArrayList with names of people who you don't follow back
                 ArrayList notFollowedBackBy = CheckLists(following, followers);
                 uxFollowers.Text = Names(notFollowing);
                 uxFollowing.Text = Names(notFollowedBackBy);
             } catch (Exception ee) {
-                drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace); Thread.Sleep(200);
-                drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace);
-                MessageBox.Show("Username or password is invalid");
+                //drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace); Thread.Sleep(200);
+                //drv.FindElements(By.XPath("//input[@class='_2hvTZ pexuQ zyHYP']"))[0].SendKeys(OpenQA.Selenium.Keys.Control + 'a' + OpenQA.Selenium.Keys.Backspace);
+                MessageBox.Show("Username or password is invalid 2");
             }
         }
 
@@ -113,13 +112,12 @@ namespace InstagramFollowerApp {
         /// </summary>
         private void ScrollDown(int num) {
             try {
-                IWebElement scrollList = drv.FindElement(By.XPath("//ul[@class='jSC57  _6xe7A']"));    // Holds the element that has the height of the total followers
+                IWebElement scrollList = drv.FindElement(By.XPath("//ul[@class='_aaey']"));    // Holds the element that has the height of the total followers
                 IJavaScriptExecutor js = drv; 
                 int oldHeight = scrollList.Size.Height;
-                js.ExecuteScript(String.Format("document.querySelector('div[class=\"isgrP\"').scrollTo(0, {0})", scrollList.Size.Height));
                 int totalHeight = (num * 54) - 54;                                           // Number of followers/following times the height of each bar
                 while (oldHeight <= totalHeight) {
-                    js.ExecuteScript(String.Format("document.querySelector('div[class=\"isgrP\"').scrollTo(0, {0})", scrollList.Size.Height));
+                    js.ExecuteScript(String.Format("document.querySelector('div[class=\"_aano\"').scrollTo(0, {0})", scrollList.Size.Height));
                     oldHeight = scrollList.Size.Height;
                 }
             } catch (Exception except) {
@@ -135,7 +133,7 @@ namespace InstagramFollowerApp {
         private void LoadPeople(ArrayList array, int people) {
             for (int i = 0; i < people; i++) {
                 uxLoader.Text = String.Format("{0}/{1} loaded", i + 1, people);
-                array.Add(drv.FindElements(By.XPath("//a[@class='FPmhX notranslate  _0imsa ']"))[i].Text);
+                array.Add(drv.FindElements(By.XPath("//div[@class='_aaeq']"))[i].Text);
             }
         }
 

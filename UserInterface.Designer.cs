@@ -36,6 +36,7 @@ namespace InstagramFollowerApp {
             this.uxFollowingLabel = new System.Windows.Forms.Label();
             this.uxLoaderLabel = new System.Windows.Forms.Label();
             this.uxLoader = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxLogIn
@@ -141,6 +142,7 @@ namespace InstagramFollowerApp {
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 425);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.uxLoader);
             this.Controls.Add(this.uxLoaderLabel);
             this.Controls.Add(this.uxFollowingLabel);
@@ -174,6 +176,7 @@ namespace InstagramFollowerApp {
         private System.Windows.Forms.Label uxFollowingLabel;
         private System.Windows.Forms.Label uxLoaderLabel;
         private System.Windows.Forms.TextBox uxLoader;
+        private System.Windows.Forms.Button button1;
     }
 }
 
