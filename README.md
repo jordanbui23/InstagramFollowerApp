@@ -30,4 +30,4 @@ This is a Windows Forms App that will take in user input for an Instagram Log In
 # How to update chrome driver for your version of Google Chrome
 - Running the program should give an error of System.InvalidOperationException: 'session not created: This version of ChromeDriver only supports Chrome version **The chrome driver version you have downloaded in the project** Current browser version is **Your version of Google Chrome**
 - Google "Chromedriver version ___" for the version that comes second in the error
-- Extract it in the InstagramFollowerApp\bin\Debug\net5.0-windows folder or InstagramFollowerApp\bin\Release\net5.0-windows depending on which project you run
+- Download and extract it in the InstagramFollowerApp\bin\Debug\net5.0-windows folder or InstagramFollowerApp\bin\Release\net5.0-windows depending on which project you run
