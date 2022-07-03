@@ -26,3 +26,8 @@ This is a Windows Forms App that will take in user input for an Instagram Log In
 - When the program clicks on the followers or following it only loads 12 elements at first. This is because it implements a dynamically infinite scrolling page.
   - I had to google a lot of information on how scroll within a web element until it reaches the buttom of the page
   - The scrolling within the web element took about 4 hours to figure out
+
+# How to update chrome driver for your version of Google Chrome
+- Running the program should give an error of System.InvalidOperationException: 'session not created: This version of ChromeDriver only supports Chrome version **The chrome driver version you have downloaded in the project** Current browser version is **Your version of Google Chrome**
+- Google "Chromedriver version ___" for the version that comes second in the error
+- Download and extract it in the InstagramFollowerApp\bin\Debug\net5.0-windows folder or InstagramFollowerApp\bin\Release\net5.0-windows depending on which project you run
